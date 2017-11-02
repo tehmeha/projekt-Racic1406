@@ -14,6 +14,7 @@ int main()
     {
         for( int j=0; j<7; j++ )
         {
+            cout << polje[i][j] << " ";
         }
     cout << endl;
     }
