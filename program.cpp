@@ -15,8 +15,11 @@ int main()
         for( int j=0; j<7; j++ )
         {
             cout << polje[i][j] << " ";
+            cout << polje[i][j] << "\t";
         }
     }
     cout << endl;
+    }
+
     return 0;
 }
