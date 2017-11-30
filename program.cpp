@@ -9,7 +9,7 @@ int main()
                       {0,1,2,1,0,0,0},
                       {0,1,1,2,0,0,0},
                       {1,2,2,2,1,2,2}};
-
+    int igrac=1;
     while(1)
     {
         cout << endl;
@@ -30,10 +30,32 @@ int main()
         cout << endl;
         }
 
+        for( int j=0; j<5; j++)
+        {
+            for(int i=0; i<6; i++ )
+            {
+                if(polje[0+i][0+j]!=0 && polje[0+i][0+j]==polje[0+i][1+j] && polje[0+i][0+j]==polje[0+i][2+j] && polje[0+i][0+j]==polje[0+i][3+j])
+                {
+                    cout << endl <<  "Pobjedio je Igrac " << polje[0+i][0+j];
+                    return 0;
+                }
+            }
+        }
 
+        for( int i=0; i<3; i++)
+        {
+            for(int j=0; j<7; j++ )
+            {
+                if(polje[0+i][0+j]!=0 && polje[0+i][0+j]==polje[1+i][0+j] && polje[0+i][0+j]==polje[2+i][0+j] && polje[0+i][0+j]==polje[3+i][0+j])
+                {
+                    cout << endl <<  "Pobjedio je Igrac " << polje[0+i][0+j];
+                    return 0;
+                }
+            }
+        }
 
         int stupac;
-        cout << "Unesite stupac u koji zelite postaviti zeton: ";
+        cout << endl << "Igrac " << igrac <<":" << "  " << "Unesite stupac u koji zelite postaviti zeton: ";
         do
         {
         cin >> stupac;
@@ -41,13 +63,25 @@ int main()
         {
             if( polje[i][stupac]==0 )
             {
-                polje[i][stupac]=1;
+                polje[i][stupac]=igrac;
                 break;
             }
         }
         }
         while(stupac < 0 && stupac > 6);
+        if(igrac==1)
+        {
+            igrac=2;
+        }
+        else
+        {
+         igrac=1;
+        }
+
+
+
     }
+
 
 
     return 0;
