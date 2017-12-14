@@ -5,10 +5,10 @@ int main()
 {
     int polje[6][7]={ {0,0,0,0,0,0,0},
                       {0,0,0,0,0,0,0},
-                      {0,2,0,1,0,0,0},
-                      {0,1,2,1,0,0,0},
-                      {0,1,1,2,0,0,0},
-                      {1,2,2,2,1,2,2}};
+                      {0,0,0,0,0,0,0},
+                      {0,0,0,0,0,0,0},
+                      {0,0,0,0,0,0,0},
+                      {0,0,0,0,0,0,0}};
     int igrac=1;
     while(1)
     {
@@ -36,7 +36,7 @@ int main()
             {
                 if(polje[0+i][0+j]!=0 && polje[0+i][0+j]==polje[0+i][1+j] && polje[0+i][0+j]==polje[0+i][2+j] && polje[0+i][0+j]==polje[0+i][3+j])
                 {
-                    cout << endl <<  "Pobjedio je Igrac " << polje[0+i][0+j];
+                    cout << endl << endl <<  "Pobijedio je Igrac " << polje[0+i][0+j] << endl << endl << endl;
                     return 0;
                 }
             }
@@ -48,14 +48,38 @@ int main()
             {
                 if(polje[0+i][0+j]!=0 && polje[0+i][0+j]==polje[1+i][0+j] && polje[0+i][0+j]==polje[2+i][0+j] && polje[0+i][0+j]==polje[3+i][0+j])
                 {
-                    cout << endl <<  "Pobjedio je Igrac " << polje[0+i][0+j];
+                    cout << endl << endl <<  "Pobijedio je Igrac " << polje[0+i][0+j] << endl << endl << endl;
+                    return 0;
+                }
+            }
+        }
+
+        for( int i=0; i<3; i++)
+        {
+            for(int j=0; j<4; j++ )
+            {
+                if(polje[0+i][0+j]!=0 && polje[0+i][0+j]==polje[1+i][1+j] && polje[0+i][0+j]==polje[2+i][2+j] && polje[0+i][0+j]==polje[3+i][3+j])
+                {
+                    cout << endl << endl <<  "Pobijedio je Igrac " << polje[0+i][0+j] << endl << endl << endl;
+                    return 0;
+                }
+            }
+        }
+
+        for( int i=0; i<3; i++)
+        {
+            for(int j=0; j<4; j++ )
+            {
+                if(polje[0+i][3+j]!=0 && polje[0+i][3+j]==polje[1+i][2+j] && polje[0+i][3+j]==polje[2+i][1+j] && polje[0+i][3+j]==polje[3+i][0+j])
+                {
+                    cout << endl << endl <<  "Pobijedio je Igrac " << polje[0+i][3+j] << endl << endl << endl;
                     return 0;
                 }
             }
         }
 
         int stupac;
-        cout << endl << "Igrac " << igrac <<":" << "  " << "Unesite stupac u koji zelite postaviti zeton: ";
+        cout << endl << endl << "Igrac " << igrac <<":" << "  " << "Unesite stupac u koji zelite postaviti zeton: ";
         do
         {
         cin >> stupac;
@@ -77,7 +101,7 @@ int main()
         {
          igrac=1;
         }
-
+        cout << endl << endl << endl << endl << endl << endl <<endl << endl << endl << endl << endl << endl << endl << endl;
 
 
     }
